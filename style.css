@@ -1,3 +1,4 @@
+style.css
 * {
     margin: 0;
     padding: 0;
@@ -5,8 +6,8 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -26,61 +27,104 @@ body {
 
 h1 {
     font-size: 2.5rem;
-    color: #333;
     margin-bottom: 10px;
 }
 
 .tagline {
-    color: #666;
+    margin-bottom: 25px;
+    color: #555;
+}
+
+/* Search Section */
+.search-section {
+    display: flex;
+    gap: 10px;
     margin-bottom: 30px;
+}
+
+#city-input {
+    flex: 1;
+    padding: 12px 20px;
+    border-radius: 25px;
+    border: 2px solid #ddd;
     font-size: 1rem;
 }
 
-#weather-display {
-    margin-top: 30px;
+#city-input:focus {
+    outline: none;
+    border-color: #667eea;
 }
 
-.loading {
-    color: #667eea;
-    font-size: 1.1rem;
+#search-btn {
+    padding: 12px 25px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    transition: 0.3s ease;
 }
 
-.weather-info {
-    animation: fadeIn 0.5s ease-in;
+#search-btn:hover {
+    opacity: 0.85;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+#search-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
 }
 
+/* Weather Display */
 .city-name {
     font-size: 2rem;
-    color: #333;
     margin-bottom: 10px;
 }
 
 .temperature {
-    font-size: 3.5rem;
-    color: #667eea;
+    font-size: 3rem;
     font-weight: bold;
-    margin: 20px 0;
+    color: #667eea;
+    margin: 15px 0;
 }
 
 .description {
-    font-size: 1.3rem;
-    color: #555;
+    font-size: 1.2rem;
     text-transform: capitalize;
-    margin-bottom: 15px;
 }
 
 .weather-icon {
     width: 100px;
-    height: 100px;
+}
+
+/* Loading */
+.loading-container {
+    text-align: center;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #eee;
+    border-top: 5px solid #667eea;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 15px;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Error */
+.error-message {
+    background: #ffe5e5;
+    color: #b30000;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Welcome */
+.welcome-message {
+    color: #555;
 }

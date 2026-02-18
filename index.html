@@ -1,25 +1,39 @@
+index.html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SkyFetch - Weather Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <div class="container">
         <h1>🌤️ SkyFetch</h1>
-        <p class="tagline">Your Personal Weather Dashboard</p>
-        
+        <p class="tagline">Search weather for any city in the world 🌍</p>
+
+        <!-- Search Section -->
+        <div class="search-section">
+            <input 
+                type="text" 
+                id="city-input" 
+                placeholder="Enter city name..."
+            />
+            <button id="search-btn">🔍 Search</button>
+        </div>
+
+        <!-- Weather Display -->
         <div id="weather-display">
-            <p class="loading">Loading weather data...</p>
+            <div class="welcome-message">
+                <p>Enter a city name to get started!</p>
+            </div>
         </div>
     </div>
 
     <!-- Axios CDN -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    
-    <!-- Your JavaScript -->
     <script src="app.js"></script>
+
 </body>
 </html>
